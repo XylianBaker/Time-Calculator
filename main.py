@@ -64,6 +64,11 @@ while True:
 
 # time calculation ⏲
 hours = left[0] - arrived[0]
-minutes = left[1] - arrived[1]
+
+if left[1] < arrived[1]:
+  minutes = 60 - arrived[1] + left[1]
+  hours = hours - 1
+else:
+  minutes = left[1] - arrived[1]
 
 print("\nYou have worked for ", hours, " hours and ", minutes, " minutes ⏲")
